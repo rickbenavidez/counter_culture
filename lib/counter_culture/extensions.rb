@@ -48,10 +48,7 @@ module CounterCulture
         column_names_valid = (
           !options[:column_names] ||
           options[:column_names].is_a?(Hash) ||
-          (
-            options[:column_names].is_a?(Proc) &&
-            options[:column_names].call.is_a?(Hash)
-          )
+          options[:column_names].is_a?(Proc)
         )
         unless column_names_valid
           raise ArgumentError.new(
